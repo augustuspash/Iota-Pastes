@@ -16,6 +16,8 @@ Iota Pastes allows you to store up to 2600 characters on the tangle. They can be
 - iota.lib.js (https://github.com/iotaledger/iota.lib.js/)
 - curl.lib.js (https://github.com/iotaledger/curl.lib.js/)
 - BigInteger (https://github.com/peterolson/BigInteger.js)
+- XSS Filters (https://github.com/yahoo/xss-filters)
+- Showdown (https://github.com/showdownjs/showdown)
 
 ### Inspiration
 - https://github.com/iota-storage/storage-web
