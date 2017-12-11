@@ -27,7 +27,7 @@ $(document).ready(function() {
     $("#hash").attr("href", "https://iotasear.ch/bundle/" + hash);
     iotaBundler.fetchDataFromTangle(hash).then(function (data) {
         hashData = data;
-        $('#bin').get(0).contentWindow.location.replace("data:text/html;charset=utf-8," + escape(xssFilters.inHTMLData(hashData)));
+        $('#bin').get(0).contentWindow.location.replace("data:text/html;charset=utf-8," + escape("<pre>"+xssFilters.inHTMLData(hashData) +"</pre>"));
     }).catch(function (error) { 
         $("#bin").val("Failed to load data. :(");
     });
@@ -37,7 +37,7 @@ $(document).ready(function() {
 $("#decryptOverlay").click(function() {
     if ($("#decryptOverlay").text() == "Revert") {
         hashData = backHashData;
-        $('#bin').get(0).contentWindow.location.replace("data:text/html;charset=utf-8," + escape(xssFilters.inHTMLData(hashData)));
+        $('#bin').get(0).contentWindow.location.replace("data:text/html;charset=utf-8," + escape("<pre>"+xssFilters.inHTMLData(hashData) +"</pre>"));
         $("#dlType").text("");
         $("#decryptOverlay").text("Decrypt");
         type = 0;
@@ -58,7 +58,7 @@ $("#decrypt").click(function() {
     decryptAES_2(password, salt, hashData).then(function (data) {
         backHashData = hashData;
         hashData = data;
-        $('#bin').get(0).contentWindow.location.replace("data:text/html;charset=utf-8," + escape(xssFilters.inHTMLData(hashData)));
+        $('#bin').get(0).contentWindow.location.replace("data:text/html;charset=utf-8," + escape("<pre>"+xssFilters.inHTMLData(hashData) +"</pre>"));
         $("#dlType").text("");
         $("#decryptOverlay").text("Revert");
         type = 0;
@@ -82,7 +82,7 @@ $("#md").click(function() {
 });
 
 $("#plain").click(function() {
-    $('#bin').get(0).contentWindow.location.replace("data:text/html;charset=utf-8," + escape(xssFilters.inHTMLData(hashData)));
+    $('#bin').get(0).contentWindow.location.replace("data:text/html;charset=utf-8," + escape("<pre>"+xssFilters.inHTMLData(hashData) +"</pre>"));
     $("#dlType").text("");
     type = 0;
 });
