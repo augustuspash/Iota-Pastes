@@ -52,21 +52,24 @@ $(document).ready(function() {
 });
 
 function writeToDocument() {
-    var newDoc = document.open("text/html", "replace");
     switch(viewType) {
         case("0"):
-            newDoc.write(xssFilters.inHTMLData(hashData));
+            var newDoc = document.open("text/plain", "replace");
+            newDoc.write("<pre>"+xssFilters.inHTMLData(hashData)+"</pre>");
             newDoc.close();
             break;
         case("1"):
+            var newDoc = document.open("text/html", "replace");
             newDoc.write(converter.makeHtml(xssFilters.inHTMLData(hashData)));
             newDoc.close();
             break;
         case("2"):
+            var newDoc = document.open("text/plain", "replace");
             newDoc.write(hashData);
             newDoc.close();
             break;
         case("3"):
+            var newDoc = document.open("text/html", "replace");
             newDoc.write(converter.makeHtml(hashData));
             newDoc.close();
             break;
