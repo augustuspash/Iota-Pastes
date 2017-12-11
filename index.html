@@ -12,9 +12,12 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<!-- Header -->
 	<header class="header">
 		<p class="heading1">Iota Pastes</p>
 	</header>
+	
+	<!-- Intro -->
 	<div class="jumbotron mainContainer">
 		Iota Pastes allows you to store up to 2600 characters on the tangle. They can be viewed as either plain text or markdown with built in xss protection 
 		and optional encryption. Data can also be directly linked to with and without xss protection. This means you could (temporarily) host a small single page
@@ -22,6 +25,8 @@
 		 </br></br>
 		 Submit your pastes to the Iota Tangle with the form below. 
 	</div>
+	
+	<!-- Post form -->
 	<div class="jumbotron mainContainer" id="submission">
 		<div class="form-group">
 			<textarea class="form-control bin" maxlength="2600" id="bin"></textarea>
@@ -41,12 +46,13 @@
         </div>
 	</div>
 	
-	
+	<!-- Footer -->
 	<div class="jumbotron mainContainer">
 		Iota pastes are not permanent and may be removed from the tangle when snapshots take place. Do not store precious data on the tangle as you may lose it. 
 		All data on the tangle is public and can be viewed by anyone.
 	</div>
 	
+	<!-- Encryption Dialog -->
 	<div class="modal fade" id="encryptModal" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -79,6 +85,7 @@
 		</div>
 	</div>
 
+	<!-- Loading Popup -->
 	<div class="modal fade" id="loadingModal" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">

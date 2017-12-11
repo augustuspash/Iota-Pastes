@@ -12,12 +12,17 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!--Header -->
 	<header class="header">
 		<p class="heading1">Iota Pastes</p>
 	</header>
+    
+    <!-- Hash info -->
 	<div class="jumbotron mainContainer">
 		Hash - <a id="hash"></a> 
 	</div>
+    
+    <!-- Viewer -->
 	<div class="jumbotron mainContainer" id="viewBox">
 		<div class="form-group" id="viewer">
 			<iframe class="form-control bin" id="bin" readonly>loading...</iframe>
@@ -37,11 +42,13 @@
         </div>
 	</div>
 	
+    <!-- Footer -->
 	<div class="jumbotron mainContainer">
 		Iota pastes are not permanent and may be removed from the tangle when snapshots take place. Do not store precious data on the tangle as you may lose it. 
 		All data on the tangle is public and can be viewed by anyone.
 	</div>
     
+    <!-- Direct link dialog -->
     <div class="modal fade" id="linkModal" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -119,6 +126,7 @@
 		</div>
 	</div>
     
+    <!-- Encryption dialog -->
     <div class="modal fade" id="encryptModal" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
