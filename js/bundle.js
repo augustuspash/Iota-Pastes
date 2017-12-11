@@ -1,5 +1,5 @@
 var iota = new IOTA({
-  provider: 'http://node.lukaseder.de:14265',
+  provider: 'https://nodes.iota.cafe:443',
 });
 
 curl.init();
