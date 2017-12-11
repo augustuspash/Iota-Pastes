@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Iota Pastes</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Font -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy">
+	<!-- BootStrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<!-- Main Page css -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="header">
+		<p class="heading1">Iota Pastes</p>
+	</header>
+	<div class="jumbotron mainContainer">
+		Iota Pastes allows you to store up to 2600 characters on the tangle. They can be viewed as either plain text or markdown with built in xss protection 
+		and optional encryption. Data can also be directly linked to with and without xss protection. This means you could (temporarily) host a small single page
+		 website on the the Iota tangle. 
+		 </br></br>
+		 Submit your pastes to the Iota Tangle with the form below. 
+	</div>
+	<div class="jumbotron mainContainer" id="submission">
+		<div class="form-group">
+			<textarea class="form-control bin" maxlength="2600" id="bin"></textarea>
+		</div>
+		
+		<div class="d-flex justify-content-between"  style="overflow: auto;">
+            <div class="btn-group btn-group">
+				<button class="btn btn-primary btn-sm" id="encypt" data-toggle="modal" data-target="#encryptModal">Use Encyption</button>
+            </div>
+            <div></div>
+            <div>
+				<label id="charDisplay" style="">0/2600</label>
+				<div class="btn-group btn-group">
+					<button class="btn btn-primary btn-sm" id="post" data-toggle="modal" data-target="#loadingModal">Post</button>
+            	</div>
+            </div>
+        </div>
+	</div>
+	
+	
+	<div class="jumbotron mainContainer">
+		Iota pastes are not permanent and may be removed from the tangle when snapshots take place. Do not store precious data on the tangle as you may lose it. 
+		All data on the tangle is public and can be viewed by anyone.
+	</div>
+	
+	<div class="modal fade" id="encryptModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Encyption</h4>
+          			<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<label for="encryptStatus">
+						Enabled
+						<input type="checkbox" name="encryptStatus" id="encryptStatus" value="1">
+					</label>
+					<div class="form-group">
+						<label class=" control-label" for="password">Password</label>  
+						<input id="password" name="password" type="password" class="form-control input-md">
+					</div>
+
+					<div class="form-group">
+						<label class=" control-label" for="salt">Salt</label>  
+						<input id="salt" name="salt" type="text"	 class="form-control input-md">							
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="form-group">
+						<button id="save" name="save" data-dismiss="modal" class="btn btn-success">Save</button>
+						<button id="cancel" name="cancel" data-dismiss="modal" class="btn btn-danger">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="loadingModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div id="loading">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <!-- Bootstrap 4 -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<!-- Forge (https://github.com/digitalbazaar/forge) -->
+	<script src="https://cdn.jsdelivr.net/npm/node-forge@0.7.0/dist/forge.min.js"></script>
+	<!-- scrypt (https://github.com/ricmoo/scrypt-js) -->
+	<script src="js/scrypt.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/buffer.js"></script>
+	<!-- AES js (https://github.com/ricmoo/aes-js) -->
+	<script type="text/javascript" src="https://cdn.rawgit.com/ricmoo/aes-js/e27b99df/index.js"></script>
+	<!-- Curl -->
+	<script type="text/javascript" src="js/curl.min.js"></script>
+	<!-- Iota -->
+	<script type="text/javascript" src="js/iota.min.js"></script>
+	<!-- BigInteger -->
+	<script type="text/javascript" src="js/BigInteger.js"></script>
+	<!-- Iota bundle helper -->
+	<script type="text/javascript" src="js/bundle.js"></script>
+	<!-- Helper JS -->
+	<script type="text/javascript" src="js/helper.js"></script>
+	<!-- Main javascript -->
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
