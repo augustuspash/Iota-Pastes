@@ -1,5 +1,5 @@
 var iota = new IOTA({
-  provider: 'https://nodes.iota.cafe:443',
+  provider: 'https://iri3-api.iota.fm:443',
 });
 
 curl.init();
