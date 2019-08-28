@@ -1,5 +1,5 @@
 var iota = new IOTA({
-  provider: 'https://iri3-api.iota.fm:443',
+  provider: 'https://nodes.devnet.iota.org:443',//https://iri3-api.iota.fm:443',
 });
 
 curl.init();
